@@ -1,0 +1,28 @@
+{
+  "name": "adocao-app",
+  "description": "Sistema de adoçao de animais",
+  "main": "index.js",
+  "authors": [
+    "Isrhael Christian"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "adocao",
+    "animais"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.1",
+    "bootstrap": "v4.0.0-alpha.6",
+    "angular-ui-router": "1.0.0-beta.3",
+    "angular-material": "^1.1.3",
+    "angular-messages": "^1.6.1"
+  }
+}

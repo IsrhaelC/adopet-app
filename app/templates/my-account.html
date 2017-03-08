@@ -1,0 +1,87 @@
+<div class="offset-6 card">
+    <div class="card-block text-center">
+        <img src="images/img-user.jpg" height="150" width="150" alt="" class="img-user rounded-circle">
+        <div class="card-title">
+            <h4>{{ma.user.name}}</h4>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">Email: {{ma.user.email}}</li>
+            <li class="list-group-item">Data de Nascimento: {{ma.user.nasc}}</li>
+        </ul>
+        <div class="card-block">
+            <a href="" class="card-link" data-toggle="modal" data-target="#mudarsenha" >Alterar senha</a>
+            <a href="" class="card-link" data-toggle="modal" data-target="#mudarDados" >Alterar dados</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal para modificar a senha-->
+<div class="modal fade" id="mudarsenha" tabindex="-1" role="dialog" aria-labelledby="ModalSenha" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalSenha">Modificar Senha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="senhaatual" class="form-control-label">Digite sua senha atual:</label>
+                        <input type="text" class="form-control" id="senhaatual">
+                    </div>
+                    <div class="form-group">
+                        <label for="newpassord" class="form-control-label">Digite sua nova senha:</label>
+                        <input type="text" class="form-control" id="newpassord">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmpassword" class="form-control-label">Confirme sua nova senha:</label>
+                        <input type="text" class="form-control" id="confirmpassword">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" >Modificar Senha</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para modificar os dados-->
+<div class="modal fade" id="mudarDados" tabindex="-1" role="dialog" aria-labelledby="ModalDados" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalDados">Modificar Senha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="novonome" class="form-control-label">Digite seu nome</label>
+                        <input type="text" class="form-control" id="novonome">
+                    </div>
+                    <div class="form-group">
+                        <label for="novoemail" class="form-control-label">Digite seu email</label>
+                        <input type="text" class="form-control" id="novoemail">
+                    </div>
+                    <div class="form-group row">
+                        <label for="date-user" class="col-2 col-form-label">Data de Nascimento</label>
+                        <div class="col-10">
+                            <input ng-model="rg.usel.date" class="form-control" type="date"  id="date-user">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" >Modificar Dados</button>
+            </div>
+        </div>
+    </div>
+</div>

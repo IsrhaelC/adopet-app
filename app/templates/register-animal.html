@@ -1,0 +1,32 @@
+<style>
+    .register-animal-form{
+        margin-top: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+</style>
+
+    <div class="card register-animal-form">
+        <div class="card-block">
+            <form name="animalForm">
+                <div class="form-group">
+                    <label for="nomePet">Nome do seu pet</label>
+                    <input name="petname" type="text" class="form-control" id="nomePet" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="agePet">Idade</label>
+                    <input name="agePet" type="number" class="form-control" id="agePet" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="descPet">Fale um pouco sobre seu pet</label>
+                    <textarea name="descAnimal" class="form-control" id="descPet" rows="6" ng-required="true"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="petInputFile">Uma foto do seu pet</label>
+                    <input type="file" class="form-control-file" id="petInputFile">
+                    <small class="form-text text-muted">Prefira uma imagem atual do seu pet</small>
+                </div>
+                <button type="submit" ng-disabled="animalForm.$invalid" class="btn btn-primary">Cadastrar Pet</button>
+            </form>
+        </div>
+    </div>

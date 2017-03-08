@@ -1,0 +1,19 @@
+{
+  "name": "adocao-app",
+  "version": "1.0.0",
+  "description": "Sistema de adoçao de animais",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "adocao",
+    "animais"
+  ],
+  "author": "Isrhael Christian",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

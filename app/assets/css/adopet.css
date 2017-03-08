@@ -1,0 +1,41 @@
+.navbar {
+    background-color: #6AAFE6;
+}
+
+body {
+     background-color: #D7FFF1;
+ }
+
+.container{
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+}
+
+.nav {
+    height: 60vh;
+}
+
+.col-md-2 {
+    padding-left: 20px;
+    margin-left: 0px;
+    background-color: #ffffff;
+}
+
+.col-md-3 {
+    background-color: #ffffff;
+}
+
+.img-user {
+    margin-left: 15px;
+}
+
+.navbar-nav {
+    margin-left: 100px;
+}
+
+.search-bar {
+    margin-left: 130px;
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AdoPet</title>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/tether/dist/js/tether.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/adopet.css">
+    <script src="module.js"></script>
+    <script src="routes.js"></script>
+
+    <script src="controllers/news-controller.js"></script>
+    <script src="controllers/messages-controller.js"></script>
+    <script src="controllers/index-controller.js"></script>
+    <script src="controllers/register-controller.js"></script>
+    <script src="controllers/login-controller.js"></script>
+    <script src="controllers/my-account-controller.js"></script>
+    <script src="services/http-request-service.js"></script>
+</head>
+<body ng-controller="IndexController as ic">
+
+    <!--
+        Página principal da aplicação, contendo uma barra de navegação fixa e uma area onde serão exibidos os
+        conteúdos dinâmicos.
+
+        Sobre a aplicação:
+        Título: Adopet
+        Sistema que visa facilitar a adoção de animais.
+        O usuario ao se cadastrar, poderia cadastrar uma animal para adoção e também buscar animais disponíveis
+        para adoção.
+        Caso um usúario encontre um animal de seu interesse, ele pode enviar uma mensagem para o tutor do animal
+        para que sejam acertados os detalhes da adoção.
+
+        Tecnologias:
+            Frontend: AngularJs, Bootstrap, Bower.
+            Backend: NodeJs.
+    -->
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggle navbar-toggle-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#" class="navbar-brand">Adopet</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form action="" class="form-inline my-2 my-lg-0 search-bar">
+                    <input type="text" class="form-control mr-sm-2" placeholder="Buscar animais..." ng-model="criterioDeBusca">
+                    <button class="btn btn-outline-sucess my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" ng-hide="!ic.isLog()">
+                    <img src="images/img-user.jpg" height="40" width="40" alt="" class="img-user rounded-circle">
+                </li>
+                <li class="nav-item" ng-hide="!ic.isLog()">
+                    <a ui-sref="myaccount" class="nav-link">Minha Conta</a>
+                </li>
+                <li class="nav-item" ng-hide="!ic.isLog()">
+                    <a ui-sref="messages" class="nav-link">Mensagens</a>
+                </li>
+                <li class="nav-item">
+                    <a ng-click="ic.loadNews()" ui-sref="news" class="nav-link">Noticias</a>
+                </li>
+                <li class="nav-item" ng-hide="!ic.isLog()">
+                    <a ui-sref="reganimal" class="nav-link">Cadastrar Animal</a>
+                </li>
+                <li class="nav-item" ng-hide="!ic.isLog()">
+                    <a ng-click="ic.logout()" ui-sref="news" class="nav-link">Sair</a>
+                </li>
+                <li class="nav-item" ng-hide="ic.isLog()">
+                    <a ui-sref="register" class="nav-link">Registrar-se</a>
+                </li>
+                <li class="nav-item" ng-hide="ic.isLog()">
+                    <a ui-sref="login" class="nav-link">Logar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

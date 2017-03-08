@@ -1,0 +1,66 @@
+<style>
+    .list-group {
+        margin-top: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .list-group > a {
+        margin-bottom: 5px;
+    }
+
+    .msg-button {
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-top: 20px;
+    }
+
+</style>
+
+
+<button type="button" class="btn btn-primary msg-button" data-toggle="modal" data-target="#novamsg" data-whatever="@mdo">Enviar Mensagem</button>
+
+<!-- Modal para enviar mensagens-->
+<div class="modal fade" id="novamsg" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Nova Mensagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="form-control-label">Destinatário:</label>
+                        <input type="text" class="form-control" id="recipient-name" ng-model="sendMsg.destinatario">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="form-control-label">Mensagem:</label>
+                        <textarea class="form-control" id="message-text" ng-model="sendMsg.msg"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button ng-click="msg.sendMsg()" type="button" class="btn btn-primary" ng-disabled="!sendMsg.destinatario || !sendMsg.msg">Enviar Mensagem</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="list-group">
+    <div href="#" ng-class="{active: msg.read}" class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="msg in msg.messages" >
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{msg.name}}</h5>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" ng-model="msg.read" class="form-check-input">
+                </label>
+            </div>
+        </div>
+        <p class="mb-1">{{msg.msg}}</p>
+        <small>{{msg.date}}</small>
+    </div>
+</div>
